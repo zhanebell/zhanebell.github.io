@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Zhane Bell</title>
     <style>
+        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -74,6 +75,26 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            /* Adjust header font size for smaller screens */
+            header h1 {
+                font-size: 2rem;
+            }
+            /* Make navigation links stack vertically */
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                padding: 0.5rem;
+            }
+            /* Adjust container padding */
+            .container {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -89,11 +110,12 @@
         <h2>Portfolio</h2>
         <div class="portfolio-item">
             <a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py">
-            <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/CHESScom/phphK5JVu.png" alt="Chess Bot Project" width="120" height="120">
+                <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/CHESScom/phphK5JVu.png" alt="Chess Bot Project" width="120" height="120">
             </a>
             <div>
                 <h3>Chess Bot Project</h3>
-                <p>This project is a recreation of a chess game, with a bot that plays moves against you while saying certain phrases throughout the game. You can view the project <a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py" target="_blank">here</a>.</p>
+                <p>This project is a recreation of a chess game, with a bot that plays moves against you while saying certain phrases throughout the game. You can view the project <a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py" target="_blank">here</a>.
+                </p>
             </div>
         </div>
     </div>
