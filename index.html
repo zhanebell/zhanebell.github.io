@@ -47,21 +47,22 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            display: flex; /* Add this to enable flex layout */
-            align-items: center; /* Vertically center items */
-            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .container img {
-            max-width: 200px; /* Adjust the maximum width of the image */
-            margin: 0 auto; /* Center the image horizontally */
-            display: block; /* Prevent image distortion */
-            border-radius: 50%; /* Optional: Make the image round */
-            margin-bottom: 2rem; /* Add some spacing between the image and text */
-            margin-right: 2rem; /* Add more space between the image and text on the right side */
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            margin-top: -20px; /* Move the image up */
         }
         .container div {
-            flex: 1; /* Take remaining space */
-            text-align: left; /* Align text to the left */
+            flex: 1;
+            text-align: left;
         }
         footer {
             background-color: #000;
@@ -75,11 +76,9 @@
 
         /* Responsive Styles */
         @media only screen and (max-width: 600px) {
-            /* Adjust header font size for smaller screens */
             header h1 {
                 font-size: 2rem;
             }
-            /* Make navigation links stack vertically */
             nav {
                 flex-direction: column;
                 align-items: center;
@@ -87,7 +86,6 @@
             nav a {
                 padding: 0.5rem;
             }
-            /* Adjust container padding */
             .container {
                 padding: 1rem;
             }
