@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +16,19 @@
             line-height: 1.6;
             scroll-behavior: smooth;
         }
+
         header {
             background-color: #000;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
+
         nav {
             display: flex;
             justify-content: center;
@@ -33,6 +37,7 @@
             top: 0;
             z-index: 1000;
         }
+
         nav a {
             color: #fff;
             padding: 1rem;
@@ -40,57 +45,73 @@
             transition: background-color 0.3s ease;
             border-radius: 15px;
         }
+
         nav a:hover {
             background-color: #333;
         }
+
         .dropdown {
             position: relative;
             display: inline-block;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
             border-radius: 15px;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
+
         .dropdown-content a:hover {
             background-color: #ddd;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
+
         .portfolio-item {
             display: flex;
             flex-wrap: wrap;
             margin: 2rem 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            background-color: #f9f9f9;
         }
+
         .portfolio-item img {
             max-width: 120px;
             margin-right: 1rem;
             border-radius: 5px;
             transition: transform 0.3s ease;
         }
+
         .portfolio-item img:hover {
             transform: scale(1.05);
         }
+
         .portfolio-item div {
             flex: 1;
             padding: 0.5rem;
         }
+
         footer {
             background-color: #000;
             color: #fff;
@@ -106,26 +127,32 @@
             header h1 {
                 font-size: 2rem;
             }
+
             nav {
                 flex-direction: column;
                 align-items: center;
             }
+
             nav a {
                 padding: 0.5rem;
             }
+
             .container {
                 padding: 1rem;
             }
+
             .portfolio-item {
                 flex-direction: column;
                 text-align: center;
             }
+
             .portfolio-item img {
                 margin: 0 auto;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Zhane Bell's Digital Portfolio</h1>
@@ -167,27 +194,37 @@
                 </p>
             </div>
         </div>
+
+        <div class="section">
+            <h2>Desmos Art Project</h2>
+            <p>In my Precalculus course, I completed a Desmos art project where I created a portrait of my girlfriend using a combination of inequalities, trigonometric functions, and various graphs. This project demonstrates my ability to apply mathematical concepts creatively. You can view the project <a href="https://www.desmos.com/calculator/jhqguxae7g" target="_blank">here</a>.</p>
+        </div>
     </div>
     <!-- Additional Information -->
     <div class="container">
         <h2>Additional Information</h2>
-        <ul>
-            <li>My most significant achievements stem from my years in the band. As a group, we secured several awards for best percussion and have received high ratings in festivals and competitions.</li>
-            <li>In my projects, I've developed productivity programs tailored to streamline and enhance my digital life, focusing on minimalism, automation, and efficiency.</li>
-            <li>Among my accomplishments is my acceptance into the Lawrence Berkeley Experiences in Research internship, a highly competitive paid computer science program I undertook the summer before my junior year.</li>
-            <li>This internship marked my first paid computer science job, giving me the amazing opportunity to network with professionals while doing something I love (coding).</li>
-            <li>After that, I pursued other internships, which led to my recent acceptance into the highly competitive high school work-study program with the National Security Agency. Securing this opportunity was a lengthy application process, spanning over a year, making me particularly proud of this achievement.</li>
-            <li>Throughout my senior year of high school, I'll be participating in this program.</li>
-            <li>Furthermore, I'm on track to graduate with honors in STEM, CTE, and academics.</li>
-            <li>Looking ahead, I am going to be enrolled in the STEM capstone course next year, in which I aim to undertake an ambitious project.</li>
-            <li>I want to do a project related to environmental science, coding, machine learning, math, and engineering.</li>
-            <li>My goal is to develop a physical product with real-world applications that benefit people in their day-to-day lives.</li>
-            <li>Ultimately, my interest in the field of computer science is driven by the desire to make a meaningful impact and assist others.</li>
-        </ul>
+        <p>
+            My most significant achievements stem from my years in the band. As a group, we secured several awards for best percussion and have received high ratings in festivals and competitions.
+        </p>
+        <p>
+            In my personal projects, I've developed productivity programs tailored to streamline and enhance my digital life, focusing on minimalism, automation, and efficiency. Examples of these include file managers, desktop cleaners, and calendar automations.
+        </p>
+        <p>
+            Among my accomplishments is my acceptance into the Lawrence Berkeley Experiences in Research internship, a highly competitive paid computer science program I undertook the summer before my junior year. This internship marked my first paid computer science job, giving me the amazing opportunity to network with professionals while pursuing my passion of coding.
+        </p>
+        <p>
+            After that, I pursued other internships, which led to my recent acceptance into the highly competitive high school work-study program with the National Security Agency. Securing this opportunity was a lengthy application process, spanning over a year, making me particularly proud of this achievement. Throughout my senior year of high school, I'll be participating in this program.
+        </p>
+        <p>
+            Furthermore, I'm on track to graduate with honors in STEM, CTE, and academics. Looking ahead, I am going to be enrolled in the STEM capstone course next year, in which I aim to undertake an ambitious project. I want to do a project related to environmental science, coding, machine learning, math, and engineering. My goal is to develop a physical product with real-world applications that benefit people in their day-to-day lives.
+        </p>
+        <p>
+            Ultimately, my interest in the field of computer science is driven by the desire to make a meaningful impact and assist others.
+        </p>
     </div>
     <footer>
         &copy; 2024 Zhane Bell. All rights reserved.
     </footer>
 </body>
-</html>
 
+</html>
