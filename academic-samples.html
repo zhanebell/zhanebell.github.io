@@ -104,6 +104,31 @@
                 padding: 1rem;
             }
         }
+
+        /* Custom Styles */
+        .left-aligned-img {
+            float: left;
+            margin-right: 1rem;
+            width: 150px; /* Resize the image */
+        }
+        a {
+            text-decoration: none;
+            color: #a39161;
+            font-weight: bold;
+        }
+        .english-samples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .english-samples iframe {
+            flex: 1 1 calc(50% - 1rem); /* 50% width minus gap */
+            max-width: 100%;
+        }
+        .english-samples .full-width {
+            flex: 1 1 100%;
+            max-width: calc(50% - 1rem); /* Shrink the fifth essay */
+        }
     </style>
 </head>
 <body>
@@ -136,17 +161,34 @@
         </div>
     </nav>
     <div class="container">
+        <h2>Academic Samples</h2>
+        <p>Welcome to my Academic Samples page! Here you will find a collection of my best work, including essays for high school and early college courses, detailed math projects, and various computer science projects. Each sample showcases my dedication and passion for learning and excellence.</p>
         <div class="section">
             <h2>English Samples</h2>
-            <!-- Add your English samples here -->
+            <div class="english-samples">
+                <iframe src="https://drive.google.com/file/d/1gFTsuOJpshzFXfOaOveTqZjJAnZB3XZo/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1Gkkp0k0Ki4luLGIKrs2e_J0okI9O7TRi/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1xkg7bNAMul_P6cRZjIjf5X74Ej1ME4eG/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1-nJaUnv0HNdp6OO47RZzJtXpLlzvJBcZ/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe class="full-width" src="https://drive.google.com/file/d/1R33-1ySrDEbYa7bPSBaIFI6vR8SP0YMA/preview" width="640" height="480" allow="autoplay"></iframe>
+            </div>
         </div>
         <div class="section">
             <h2>Math Samples</h2>
-            <!-- Add your Math samples here -->
+            <p>In my Precalculus course, I completed a Desmos art project where I created a portrait of my girlfriend using a combination of inequalities, trigonometric functions, and various graphs. This project demonstrates my ability to apply mathematical concepts creatively. You can view the project <a href="https://www.desmos.com/calculator/jhqguxae7g" target="_blank">here</a>.</p>
         </div>
         <div class="section">
             <h2>Computer Science Samples</h2>
-            <!-- Add your Computer Science samples here -->
+            <div class="container">
+                <h2>Personal Projects</h2>
+                <div id="chess-bot" class="portfolio-item">
+                    <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/CHESScom/phphK5JVu.png" alt="Chess Bot Project" class="left-aligned-img">
+                    <div>
+                        <h3>Chess Bot Project</h3>
+                        <p>This project is a recreation of a chess game, featuring a bot that plays against you and interacts with you throughout the game by saying various phrases. You can explore the project <a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
