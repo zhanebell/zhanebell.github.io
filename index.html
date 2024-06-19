@@ -77,22 +77,19 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+        }
+        .intro {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
         }
-        .container img {
+        .intro img {
             max-width: 200px;
-            margin: 0 auto;
-            display: block;
             border-radius: 50%;
-            margin-bottom: 2rem;
             margin-right: 2rem;
-            margin-top: -60px; /* Move the image up */
         }
-        .container div {
+        .intro-text {
             flex: 1;
-            text-align: left;
         }
         footer {
             background-color: #000;
@@ -130,6 +127,18 @@
             .container {
                 padding: 1rem;
             }
+            .intro {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .intro img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            .intro-text {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -164,59 +173,62 @@
         </div>
     </nav>
     <div class="container">
-        <img src="https://media.licdn.com/dms/image/D4D03AQHJA97wPhWEww/profile-displayphoto-shrink_400_400/0/1687387226828?e=1723075200&v=beta&t=ucOjQWVAZWinXdHpODkfF3nX_Zo-Ns3k5iZyTdvvrJc" alt="Zhane Bell's Headshot">
-        <div id="about">
-            <h2>About Me</h2>
-            <p>I am a junior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, programming, and music. My journey spans three years in the marching band and concert band, while I've also played piano and drums at my church, New Hope Leeward. As a devoted STEAM Academy Ambassador, I am committed to improving our school community. Beyond academics, I enjoy attending chess club, taking on coding projects, and learning new coding languages. In this portfolio, you will find academic samples such as essays, coding projects, and math projects. You may also access my college research document, a list of my extra curricular activities, some of my personal projects, drafts of college essays and PIQ responses. Feel free to look around and email me if you have any questions!</p>
-            <h3>Contact</h3>
-            <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
-            <h3>Work Experience</h3>
-            <ul>
-                <li>
-            <strong>Bell Electric, Ewa Beach, HI — Computer Tech</strong>
-                    <ul>
-                        <li>June 2023 - Present</li>
-                        <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program.</li>
-                        <li>Logged electrical variables in the InspecTrend Program.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>iTrampoline Hawaii, Waipahu, HI — Park Attendant</strong>
-                    <ul>
-                        <li>June 2023 - September 2023</li>
-                        <li>Provided excellent customer service and enforced park rules and regulations.</li>
-                        <li>Maintained the cleanliness of the facility.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>LBNL Energy Sciences Network, Berkeley, CA — Student Intern</strong>
-                    <ul>
-                        <li>June 2023 - July 2023</li>
-                        <li>Researched new Data Visualizations for Network/Router Data.</li>
-                        <li>Presented research to mentors and the rest of the computing sciences division.</li>
-                    </ul>
-                </li>
-                <h3>Volunteer Experience</h3>
-                <li>
-                 
-                    <strong>AHEC Hawaii Health Workforce Summit, Hilton Hawaiian Village — Volunteer</strong>
-                    <ul>
-                        <li>Volunteered annually since sophomore year</li>
-                        <li>Checked in all exhibitors, ensuring they had their booths set up and ready to go.</li>
-                        <li>Set up tables for all meals.</li>
-                        <li>Created name tags for guests using Microsoft Word.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Chamber of Commerce Annual Luncheon, Hilton Hawaiian Village — Volunteer</strong>
-                    <ul>
-                        <li>Volunteered annually since sophomore year</li>
-                        <li>Checked in all exhibitors, ensuring their booths were set up and ready.</li>
-                        <li>Validated parking, and set up tables for all meals.</li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="intro">
+            <img src="https://media.licdn.com/dms/image/D4D03AQHJA97wPhWEww/profile-displayphoto-shrink_400_400/0/1687387226828?e=1723075200&v=beta&t=ucOjQWVAZWinXdHpODkfF3nX_Zo-Ns3k5iZyTdvvrJc" alt="Zhane Bell's Headshot">
+            <div class="intro-text">
+                <h2>About Me</h2>
+                <p>I am a junior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, programming, and music. My journey spans three years in the marching band and concert band, while I've also played piano and drums at my church, New Hope Leeward. As a devoted STEAM Academy Ambassador, I am committed to improving our school community. Beyond academics, I enjoy attending chess club, taking on coding projects, and learning new coding languages. In this portfolio, you will find academic samples such as essays, coding projects, and math projects. You may also access my college research document, a list of my extra curricular activities, some of my personal projects, drafts of college essays and PIQ responses. Feel free to look around and email me if you have any questions!</p>
+                <h3>Contact</h3>
+                <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
+            </div>
         </div>
+        <h3>Work Experience</h3>
+        <ul>
+            <li>
+                <strong>Bell Electric, Ewa Beach, HI — Computer Tech</strong>
+                <ul>
+                    <li>June 2023 - Present</li>
+                    <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program.</li>
+                    <li>Logged electrical variables in the InspecTrend Program.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>iTrampoline Hawaii, Waipahu, HI — Park Attendant</strong>
+                <ul>
+                    <li>June 2023 - September 2023</li>
+                    <li>Provided excellent customer service and enforced park rules and regulations.</li>
+                    <li>Maintained the cleanliness of the facility.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>LBNL Energy Sciences Network, Berkeley, CA — Student Intern</strong>
+                <ul>
+                    <li>June 2023 - July 2023</li>
+                    <li>Researched new Data Visualizations for Network/Router Data.</li>
+                    <li>Presented research to mentors and the rest of the computing sciences division.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Volunteer Experience</h3>
+        <ul>
+            <li>
+                <strong>AHEC Hawaii Health Workforce Summit, Hilton Hawaiian Village — Volunteer</strong>
+                <ul>
+                    <li>Volunteered annually since sophomore year</li>
+                    <li>Checked in all exhibitors, ensuring they had their booths set up and ready to go.</li>
+                    <li>Set up tables for all meals.</li>
+                    <li>Created name tags for guests using Microsoft Word.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Chamber of Commerce Annual Luncheon, Hilton Hawaiian Village — Volunteer</strong>
+                <ul>
+                    <li>Volunteered annually since sophomore year</li>
+                    <li>Checked in all exhibitors, ensuring their booths were set up and ready.</li>
+                    <li>Validated parking, and set up tables for all meals.</li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <footer>
         © 2024 Zhane Bell. All rights reserved.
