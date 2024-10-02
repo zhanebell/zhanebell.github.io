@@ -15,6 +15,11 @@
             line-height: 1.6;
             scroll-behavior: smooth;
         }
+
+                 /* Ensure all elements use border-box */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         header {
             background-color: #000;
             color: #fff;
@@ -98,27 +103,17 @@
             margin-top: 2rem;
             flex: 1 1 45%;
         }
-/*         footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        } */
- /* Full-Width Footer Styling */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100vw; /* Ensures footer spans the full width of the viewport */
-            left: 50%;
-            transform: translateX(-50%); /* Centers the footer correctly */
-        }
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
         /* Additional Styles for Welcome and Contact Section */
         .welcome-section {
             background-color: #f9f9f9;
@@ -220,6 +215,7 @@
             </ul>
             <p>I hope this portfolio provides you with valuable insights into my experiences and passions. Feel free to explore each section, and don't hesitate to contact me if you have any questions or feedback!</p>
         </div>
+     </div>
     <div class="container">
         <div class="intro">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQHJA97wPhWEww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687387226828?e=1729123200&v=beta&t=WafcBl4AmJQoxKKTrq5rP_LC0PeqIdJfcEpZxMJM3As" alt="Zhane Bell's Headshot">
