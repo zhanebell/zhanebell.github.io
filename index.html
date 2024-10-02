@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Zhane Bell's Digital Portfolio</title>
     <style>
         /* General Styles */
@@ -43,7 +44,6 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
             border-radius: 15px;
-            margin: 0 5px;
         }
         nav a:hover {
             background-color: #333;
@@ -56,7 +56,7 @@
             display: none;
             position: absolute;
             background-color: #f9f9f9;
-            min-width: 200px;
+            min-width: 160px;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 15px;
@@ -65,11 +65,10 @@
             display: block;
         }
         .dropdown-content a {
-            color: #333;
+            color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            border-bottom: 1px solid #ddd;
         }
         .dropdown-content a:hover {
             background-color: #ddd;
@@ -108,6 +107,30 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Additional Styles for Welcome and Contact Section */
+        .welcome-section {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .welcome-section h2 {
+            color: #a39161;
+        }
+        .welcome-section p {
+            font-size: 1.1rem;
+        }
+        #contact a {
+            color: #a39161;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #contact a:hover {
+            color: #a39161;
+        }
+
         /* Responsive Styles */
         @media only screen and (max-width: 600px) {
             header h1 {
@@ -119,7 +142,6 @@
             }
             nav a {
                 padding: 0.5rem;
-                margin: 5px 0;
             }
             .container {
                 padding: 1rem;
@@ -148,84 +170,65 @@
         <h1>Zhane Bell's Digital Portfolio</h1>
     </header>
     <nav>
-        <a href="index.html">Home</a>
         <div class="dropdown">
             <a href="#">About Me</a>
             <div class="dropdown-content">
-                <a href="index.html#about">Biography</a>
+                <a href="index.html#about">About Me</a>
                 <a href="index.html#contact">Contact</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Portfolio</a>
+            <a href="#">Academic and Professional Profile</a>
             <div class="dropdown-content">
                 <a href="academic-samples.html">Academic Samples</a>
-                <a href="major-projects.html">Personal Projects</a>
-                <a href="extra-curriculars.html">Extracurriculars</a>
-                <a href="classroom-leadership-and-initiative.html">Leadership & Initiative</a>
+                <a href="extra-curriculars.html">Extra-Curriculars</a>
+                <a href="major-projects.html">Major Personal Projects & Accomplishments</a>
+                <a href="classroom-leadership-and-initiative.html">Classroom Leadership & Initiative</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">College Preparation</a>
+            <a href="#">College Research + Essays</a>
             <div class="dropdown-content">
                 <a href="college-research.html">College Research</a>
                 <a href="application-theme.html">Application Theme</a>
-                <a href="essays.html">Essays & PIQs</a>
+                <a href="essays.html">Personal Statement, Supplementals, PIQs</a>
             </div>
         </div>
     </nav>
     <div class="container">
-        <div class="intro">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHJA97wPhWEww/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1687387226828?e=2147483647&v=beta&t=RRid-RHB4Ix7GUTx2rb-Rlk4YNEAHxQWObBywCWJS0U" alt="Zhane Bell's Headshot">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2>Welcome to My Digital Portfolio!</h2>
+            <p>This site is designed to showcase my academic achievements, extracurricular activities, personal projects, and preparations for college applications. Use the navigation tabs above to explore different sections:</p>
+            <ul>
+                <li><strong>Academic Samples:</strong> View examples of my work from various classes, including essays, math projects, and computer science assignments.</li>
+                <li><strong>Personal Projects:</strong> Discover the coding projects I've developed independently.</li>
+                <li><strong>Extracurriculars:</strong> Learn about the clubs and organizations I'm involved in and my roles within them.</li>
+                <li><strong>Leadership & Initiative:</strong> Read about my leadership positions and contributions in both academic and community settings.</li>
+                <li><strong>College Preparation:</strong> Access my college research, application themes, and drafts of my essays and PIQ responses.</li>
+            </ul>
+            <p>I hope this portfolio provides you with valuable insights into my experiences and passions. Feel free to explore each section, and don't hesitate to contact me if you have any questions or feedback!</p>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="intro" id="about">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHJA97wPhWEww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687387226828?e=1729123200&v=beta&t=WafcBl4AmJQoxKKTrq5rP_LC0PeqIdJfcEpZxMJM3As" alt="Zhane Bell's Headshot">
             <div class="intro-text">
                 <h2>About Me</h2>
-                <p>I am a senior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, mathematics, and music. My musical journey spans three years in the marching band and concert band, and I've also played piano and drums at my church, New Hope Leeward. As a devoted S.T.E.A.M. Academy Ambassador, I am committed to improving our school community and sharing the exciting opportunities that S.T.E.A.M. offers. Beyond academics, I enjoy taking on coding projects, studying math, and reading about the latest tech news. In this portfolio, you will find academic samples from my core classes, my college research, descriptions of my extracurricular activities, and drafts of my essays and PIQ responses.</p>
-                
-                <p>Welcome to my digital portfolio! This website is designed to showcase my academic achievements, extracurricular activities, personal projects, and preparations for college applications. Use the navigation tabs above to explore different sections:</p>
-                <ul>
-                    <li><strong>Academic Samples</strong>: View examples of my work from various classes, including essays, math projects, and computer science assignments.</li>
-                    <li><strong>Personal Projects</strong>: Discover the coding projects I've developed independently.</li>
-                    <li><strong>Extracurriculars</strong>: Learn about the clubs and organizations I'm involved in and my roles within them.</li>
-                    <li><strong>Leadership & Initiative</strong>: Read about my leadership positions and contributions in both academic and community settings.</li>
-                    <li><strong>College Preparation</strong>: Access my college research, application themes, and drafts of my essays and PIQ responses.</li>
-                </ul>
-                <p>I hope this portfolio provides you with valuable insights into my experiences and passions. Feel free to explore each section, and don't hesitate to contact me if you have any questions or feedback!</p>
-
-                <h3 id="contact">Contact</h3>
-                <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank">zhanebell25@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/zhane-bell-b893a7280" target="_blank">LinkedIn</a>.</p>
+                <p>Aloha, my name is Zhane Bell. I am a senior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, mathematics, and music. My musical journey spans three years in the marching band and concert band, and I've also played piano and drums at my church, New Hope Leeward. As a devoted S.T.E.A.M. Academy Ambassador, I am committed to improving our school community and sharing the exciting opportunities that S.T.E.A.M. offers. Beyond academics, I enjoy taking on coding projects, studying math, learning new skills, and reading about the latest tech news.</p>
+                <h3>Contact</h3>
+                <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
             </div>
         </div>
+        <!-- Existing Work Experience and Volunteer Sections -->
         <div class="content-section">
             <h3>Work Experience</h3>
             <ul>
-                <li>
-                    <strong>Bell Electric, Ewa Beach, HI — Computer Tech</strong>
-                    <ul>
-                        <li>June 2023 - Present</li>
-                        <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program.</li>
-                        <li>Logged electrical variables in the InspecTrend Program.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>iTrampoline Hawaii, Waipahu, HI — Park Attendant</strong>
-                    <ul>
-                        <li>June 2023 - September 2023</li>
-                        <li>Provided excellent customer service and enforced park rules and regulations.</li>
-                        <li>Maintained the cleanliness of the facility.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>LBNL Energy Sciences Network, Berkeley, CA — Student Intern</strong>
-                    <ul>
-                        <li>June 2023 - July 2023</li>
-                        <li>Researched new data visualizations for network/router data.</li>
-                        <li>Presented research to mentors and the rest of the Computing Sciences Division.</li>
-                    </ul>
-                </li>
+                <!-- Work experience content here -->
             </ul>
         </div>
         <div class="content-section">
-            <h3>Volunteer Experience</h3>
+            <h3>Volunteer Experience</
             <ul>
                 <li>
                     <strong>AHEC Hawaii Health Workforce Summit, Hilton Hawaiian Village — Volunteer</strong>
@@ -241,7 +244,7 @@
                     <ul>
                         <li>Volunteered annually since sophomore year</li>
                         <li>Checked in all exhibitors, ensuring their booths were set up and ready.</li>
-                        <li>Validated parking and set up tables for all meals.</li>
+                        <li>Validated parking, and set up tables for all meals.</li>
                     </ul>
                 </li>
             </ul>
