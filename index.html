@@ -16,7 +16,7 @@
             scroll-behavior: smooth;
         }
 
-                 /* Ensure all elements use border-box */
+        /* Ensure all elements use border-box */
         *, *::before, *::after {
             box-sizing: border-box;
         }
@@ -103,16 +103,15 @@
             margin-top: 2rem;
             flex: 1 1 45%;
         }
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
 
         /* Additional Styles for Welcome and Contact Section */
         .welcome-section {
@@ -135,6 +134,32 @@ footer {
         }
         #contact a:hover {
             color: #a39161;
+        }
+
+        /* Styles for Additional Resources Buttons */
+        .additional-resources-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-button {
+            flex: 1;
+            min-width: 150px;
+            background-color: #a39161;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .resource-button:hover {
+            background-color: #8a7b4f;
+            transform: scale(1.05);
         }
 
         /* Responsive Styles */
@@ -167,6 +192,9 @@ footer {
             }
             .content-section {
                 flex: 1 1 100%;
+            }
+            .additional-resources-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -218,12 +246,20 @@ footer {
      </div>
     <div class="container">
         <div class="intro">
-            <img src="zhanebellheadshot.jpg">
+            <img src="zhanebellheadshot.jpg" alt="Zhane Bell Headshot">
             <div class="intro-text">
                 <h2>About Me</h2>
                 <p>I am a senior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, mathematics, and music. My musical journey spans three years in the marching band and concert band, while I've also played piano and drums at my church, New Hope Leeward. As a devoted STEAM Academy Ambassador, I am committed to improving our school community and sharing exciting opportunities that S.T.E.A.M. has to offer. Beyond academics, I enjoy taking on coding projects, studying math, and reading about the latest tech news. In this portfolio, you will find academic samples from some of my core classes. My portfolio contains my college research, descriptions of my extra curricular activities, and drafts of my essays and PIQ responses. Feel free to look around and email me if you have any questions!</p>
                 <h3>Contact</h3>
                 <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
+                
+                <!-- New Additional Resources Section -->
+                <h3>Additional Resources</h3>
+                <div class="additional-resources-buttons">
+                    <a href="https://drive.google.com/file/d/1esZyKflSC0AQhv1pRDVlzsv42d087aCG/view?usp=sharing" target="_blank" class="resource-button">Resume</a>
+                    <a href="https://docs.google.com/document/d/1oYwwU8JiY0URXHwaAbVj9gKstoU-MoLD6Il7rPmSE6Y/edit?usp=sharing" target="_blank" class="resource-button">Post Secondary Plan Worksheet</a>
+                    <a href="https://drive.google.com/file/d/1cEzg25kGfVQipLIGoBjCGZOEdgK4wGAp/view?usp=sharing" target="_blank" class="resource-button">Unofficial Transcript</a>
+                </div>
             </div>
         </div>
         <div class="content-section">
