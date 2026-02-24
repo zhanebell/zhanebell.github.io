@@ -3,319 +3,1012 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Zhane Bell's Digital Portfolio</title>
-     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
+    <title>Zhane Bell - Software Developer & Engineer</title>
+    <style>
+        * {
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #ec4899;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-border: #334155;
+            --dark-text: #f1f5f9;
+            --dark-text-secondary: #cbd5e1;
+            --light-bg: #f8fafc;
+            --light-card: #ffffff;
+            --light-border: #e2e8f0;
+            --light-text: #0f172a;
+            --light-text-secondary: #64748b;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
-        /* Ensure all elements use border-box */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Header & Navigation */
         header {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        a {
-            text-decoration: none;
-            color: #a39161;
-            font-weight: bold;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #a39161;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
-        nav a {
-            color: #fff;
-            padding: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border-radius: 15px;
+
+        body.light-mode header {
+            background-color: rgba(248, 250, 252, 0.95);
+            border-bottom: 1px solid var(--light-border);
         }
-        nav a:hover {
-            background-color: #333;
+
+        body.dark-mode header {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--dark-border);
         }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 15px;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .container {
+
+        nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem 2rem;
             display: flex;
-            flex-wrap: wrap;
-        }
-        .intro {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            flex: 1 1 100%;
-        }
-        .intro img {
-            max-width: 200px;
-            border-radius: 50%;
-            margin-right: 2rem;
-        }
-        .intro-text {
-            flex: 1;
-        }
-        .content-section {
-            margin-top: 2rem;
-            flex: 1 1 45%;
-        }
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
 
-        /* Additional Styles for Welcome and Contact Section */
-        .welcome-section {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        .welcome-section h2 {
-            color: #a39161;
-        }
-        .welcome-section p {
-            font-size: 1.1rem;
-        }
-        #contact a {
-            color: #a39161;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #contact a:hover {
-            color: #a39161;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            transition: transform 0.3s ease;
         }
 
-        /* Styles for Additional Resources Buttons */
-        .additional-resources-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        .resource-button {
-            flex: 1;
-            min-width: 150px;
-            background-color: #a39161;
-            color: #fff;
-            padding: 0.75rem 1rem;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-        .resource-button:hover {
-            background-color: #8a7b4f;
+        .logo:hover {
             transform: scale(1.05);
         }
 
-        /* Responsive Styles */
-        @media only screen and (max-width: 600px) {
-            header h1 {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .nav-links a {
+            color: var(--light-text);
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--dark-text);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light-mode .theme-toggle {
+            color: var(--light-text);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        body.dark-mode .theme-toggle {
+            color: var(--dark-text);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+            background-color: var(--primary);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            color: white;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 70px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        body.light-mode .hero-subtitle {
+            color: var(--light-text-secondary);
+        }
+
+        body.dark-mode .hero-subtitle {
+            color: var(--dark-text-secondary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            opacity: 0;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            background: transparent;
+        }
+
+        body.light-mode .btn-secondary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        body.dark-mode .btn-secondary {
+            color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Profile Section */
+        .profile-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .profile-content {
+            animation: slideInRight 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .profile-content > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        body.light-mode .profile-content > p {
+            color: var(--light-text-secondary);
+        }
+
+        body.dark-mode .profile-content > p {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Cards Section */
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .grid .card:nth-child(1) { animation-delay: 0.1s; }
+        .grid .card:nth-child(2) { animation-delay: 0.2s; }
+        .grid .card:nth-child(3) { animation-delay: 0.3s; }
+        .grid .card:nth-child(4) { animation-delay: 0.4s; }
+        .grid .card:nth-child(5) { animation-delay: 0.5s; }
+        .grid .card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body.light-mode .card {
+            background-color: var(--light-card);
+            border-color: var(--light-border);
+        }
+
+        body.dark-mode .card {
+            background-color: var(--dark-card);
+            border-color: var(--dark-border);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        body.light-mode .card:hover {
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+        }
+
+        body.dark-mode .card:hover {
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card-position {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .card p {
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+
+        body.light-mode .card p {
+            color: var(--light-text-secondary);
+        }
+
+        body.dark-mode .card p {
+            color: var(--dark-text-secondary);
+        }
+
+        .card ul {
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Resources Section */
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, transparent 100%);
+            border-color: var(--secondary);
+        }
+
+        .resource-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .resource-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        body.light-mode .contact-link {
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        body.dark-mode .contact-link {
+            background-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .contact-link:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid;
+            transition: border-color 0.3s ease;
+        }
+
+        body.light-mode footer {
+            border-color: var(--light-border);
+            color: var(--light-text-secondary);
+        }
+
+        body.dark-mode footer {
+            border-color: var(--dark-border);
+            color: var(--dark-text-secondary);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
                 font-size: 2rem;
             }
-            nav {
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
             }
-            nav a {
-                padding: 0.5rem;
+
+            .btn {
+                width: 100%;
+                justify-content: center;
             }
-            .container {
-                padding: 1rem;
+
+            .profile-section {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .profile-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .section {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
                 flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: inherit;
+                padding: 2rem 1rem;
+                gap: 1rem;
             }
-            .intro {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .intro img {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-            .intro-text {
-                text-align: center;
-            }
-            .content-section {
-                flex: 1 1 100%;
-            }
-            .additional-resources-buttons {
-                flex-direction: column;
-            }
+        }
+
+        /* Smooth transitions for theme changes */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        button, a {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="light-mode">
     <header>
-        <h1>Zhane Bell's Digital Portfolio</h1>
-    </header>
-    <nav>
-        <div class="dropdown">
-            <a href="#">About Me</a>
-            <div class="dropdown-content">
-                <a href="index.html#about">About Me</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Academic and Professional Profile</a>
-            <div class="dropdown-content">
-                <a href="academic-samples.html">Academic Samples</a>
-                <a href="extra-curriculars.html">Extra-Curriculars</a>
-                <a href="major-projects.html">Major Personal Projects & Accomplishments</a>
-                <a href="classroom-leadership-and-initiative.html">Classroom Leadership & Initiative</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">College Research + Essays</a>
-            <div class="dropdown-content">
-                <a href="college-research.html">College Research</a>
-                <a href="application-theme.html">Application Theme</a>
-                <a href="essays.html">Personal Statement, Supplementals, PIQs</a>
-            </div>
-        </div>
-    </nav>
-     <div class="container">
-        <!-- Welcome Section -->
-        <div class="welcome-section">
-            <h2> - Welcome to My Digital Portfolio! C/O 2025 - </h2>
-            <p>This site is designed to showcase my academic achievements, extracurricular activities, personal projects, and preparations for college applications. Use the navigation tabs above to explore different sections:</p>
-            <ul>
-                <li><strong>Academic Samples:</strong> View examples of my work from various classes, including essays, math projects, and computer science assignments.</li>
-                <li><strong>Personal Projects:</strong> Discover the coding projects I've developed independently.</li>
-                <li><strong>Extracurriculars:</strong> Learn about the clubs and organizations I'm involved in and my roles within them.</li>
-                <li><strong>Leadership & Initiative:</strong> Read about my leadership positions and contributions in both academic and community settings.</li>
-                <li><strong>College Preparation:</strong> Access my college research, application themes, and drafts of my essays and short responses.</li>
+        <nav>
+            <div class="logo">Zhane Bell</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <p>I hope this portfolio provides you with valuable insights into my experiences and passions. Feel free to explore each section, and don't hesitate to contact me if you have any questions or feedback!</p>
-        </div>
-     </div>
-    <div class="container">
-        <div class="intro">
-            <img src="zhanebellheadshot.jpg" alt="Zhane Bell Headshot">
-            <div class="intro-text">
-                <h2>About Me</h2>
-                <p>I am a senior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, mathematics, and music. My musical journey spans three years in the marching band and concert band, while I've also played piano and drums at my church, New Hope Leeward. As a devoted STEAM Academy Ambassador, I am committed to improving our school community and sharing exciting opportunities that S.T.E.A.M. has to offer. Beyond academics, I enjoy taking on coding projects, studying math, and reading about the latest tech news. In this portfolio, you will find academic samples from some of my core classes. My portfolio contains my college research, descriptions of my extra curricular activities, and drafts of my essays and PIQ responses. Feel free to look around and email me if you have any questions!</p>
-                <h3>Contact</h3>
-                <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
-                
-                <!-- New Additional Resources Section -->
-                <h3>Additional Resources</h3>
-                <div class="additional-resources-buttons">
-                    <a href="https://drive.google.com/file/d/1esZyKflSC0AQhv1pRDVlzsv42d087aCG/view?usp=sharing" target="_blank" class="resource-button">Resume</a>
-                    <a href="https://docs.google.com/document/d/1oYwwU8JiY0URXHwaAbVj9gKstoU-MoLD6Il7rPmSE6Y/edit?usp=sharing" target="_blank" class="resource-button">Post Secondary Plan (GPS)</a>
-                    <a href="https://drive.google.com/file/d/1cEzg25kGfVQipLIGoBjCGZOEdgK4wGAp/view?usp=sharing" target="_blank" class="resource-button">Unofficial Transcript</a>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Software Developer & Engineer</h1>
+                <p class="hero-subtitle">STEAM Academy Ambassador | Computer Science Enthusiast | Music Lover</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="https://drive.google.com/file/d/1esZyKflSC0AQhv1pRDVlzsv42d087aCG/view?usp=sharing" target="_blank" class="btn btn-secondary">View Resume</a>
                 </div>
             </div>
-        </div>
-        <div class="content-section">
-            <h3>Work Experience</h3>
-            <ul>
-                <li>
-                    <strong>Bell Electric, Ewa Beach, HI — Computer Tech</strong>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="profile-section" id="about">
+            <div class="profile-image">
+                <img src="zhanebellheadshot.jpg" alt="Zhane Bell">
+            </div>
+            <div class="profile-content">
+                <h2>About Me</h2>
+                <p>I'm a driven senior at James Campbell High School, passionate about computer science, mathematics, and music. As a proud member of the S.T.E.A.M. Academy, I've committed myself to excellence in academics and making a meaningful impact in my community.</p>
+                <p>With three years of experience in marching and concert band, plus piano and drums at my church, I bring creativity to everything I do. I'm deeply invested in exploring new technologies, solving complex problems through code, and sharing STEAM opportunities with others as a dedicated Academy Ambassador.</p>
+                <div class="resources" style="margin-top: 2.5rem;">
+                    <a href="https://drive.google.com/file/d/1esZyKflSC0AQhv1pRDVlzsv42d087aCG/view?usp=sharing" target="_blank" class="resource-card">
+                        <h4>📄 Resume</h4>
+                        <p>View my detailed resume</p>
+                    </a>
+                    <a href="https://docs.google.com/document/d/1oYwwU8JiY0URXHwaAbVj9gKstoU-MoLD6Il7rPmSE6Y/edit?usp=sharing" target="_blank" class="resource-card">
+                        <h4>🎯 Post Secondary Plan</h4>
+                        <p>My GPS college plan</p>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1cEzg25kGfVQipLIGoBjCGZOEdgK4wGAp/view?usp=sharing" target="_blank" class="resource-card">
+                        <h4>📋 Transcript</h4>
+                        <p>View my transcript</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section" id="experience">
+            <h2 class="section-title">Experience</h2>
+            
+            <h3 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 700;">Work Experience</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Computer Tech</h3>
+                    <div class="card-position">Bell Electric</div>
+                    <div class="card-date">June 2023 - Present</div>
+                    <p>Ewa Beach, HI</p>
                     <ul>
-                        <li>June 2023 - Present</li>
-                        <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program.</li>
-                        <li>Logged electrical variables in the InspecTrend Program.</li>
+                        <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program</li>
+                        <li>Logged electrical variables and maintained accurate digital records</li>
+                        <li>Ensured data integrity and accuracy for critical equipment analysis</li>
                     </ul>
-                </li>
-                <li>
-                    <strong>iTrampoline Hawaii, Waipahu, HI — Park Attendant</strong>
+                </div>
+
+                <div class="card">
+                    <h3>Park Attendant</h3>
+                    <div class="card-position">iTrampoline Hawaii</div>
+                    <div class="card-date">June 2023 - September 2023</div>
+                    <p>Waipahu, HI</p>
                     <ul>
-                        <li>June 2023 - September 2023</li>
-                        <li>Provided excellent customer service and enforced park rules and regulations.</li>
-                        <li>Maintained the cleanliness of the facility.</li>
+                        <li>Provided exceptional customer service to diverse clientele</li>
+                        <li>Enforced park rules and regulations while maintaining a fun atmosphere</li>
+                        <li>Maintained facility cleanliness and safety standards</li>
                     </ul>
-                </li>
-                <li>
-                    <strong>LBNL Energy Sciences Network, Berkeley, CA — Student Intern</strong>
+                </div>
+
+                <div class="card">
+                    <h3>Student Intern</h3>
+                    <div class="card-position">Lawrence Berkeley National Lab (LBNL)</div>
+                    <div class="card-date">June 2023 - July 2023</div>
+                    <p>Berkeley, CA</p>
                     <ul>
-                        <li>June 2023 - July 2023</li>
-                        <li>Researched new Data Visualizations for Network/Router Data.</li>
-                        <li>Presented research to mentors and the rest of the computing sciences division.</li>
+                        <li>Researched innovative data visualizations for network and router data</li>
+                        <li>Presented research findings to mentors and computing sciences division</li>
+                        <li>Contributed to cutting-edge network analysis projects</li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="content-section">
-            <h3>Volunteer Experience</h3>
-            <ul>
-                <li>
-                    <strong>AHEC Hawaii Health Workforce Summit, Hilton Hawaiian Village — Volunteer</strong>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.5rem; margin-top: 3rem; margin-bottom: 1.5rem; font-weight: 700;">Volunteer Experience</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Health Workforce Summit Volunteer</h3>
+                    <div class="card-position">AHEC Hawaii</div>
+                    <div class="card-date">Annual - Sophomore Year to Present</div>
+                    <p>Hilton Hawaiian Village</p>
                     <ul>
-                        <li>Volunteered annually since sophomore year</li>
-                        <li>Checked in all exhibitors, ensuring they had their booths set up and ready to go.</li>
-                        <li>Set up tables for all meals.</li>
-                        <li>Created name tags for guests using Microsoft Word.</li>
+                        <li>Checked in all exhibitors and ensured booth setup completion</li>
+                        <li>Set up tables for meals and guest areas</li>
+                        <li>Created professional name tags using Microsoft Office</li>
                     </ul>
-                </li>
-                <li>
-                    <strong>Chamber of Commerce Annual Luncheon, Hilton Hawaiian Village — Volunteer</strong>
+                </div>
+
+                <div class="card">
+                    <h3>Chamber of Commerce Volunteer</h3>
+                    <div class="card-position">Chamber of Commerce</div>
+                    <div class="card-date">Annual - Sophomore Year to Present</div>
+                    <p>Hilton Hawaiian Village</p>
                     <ul>
-                        <li>Volunteered annually since sophomore year</li>
-                        <li>Checked in all exhibitors, ensuring their booths were set up and ready.</li>
-                        <li>Validated parking, and set up tables for all meals.</li>
+                        <li>Managed exhibitor check-in and booth coordination</li>
+                        <li>Handled parking validation and event logistics</li>
+                        <li>Set up facilities for meals and networking sessions</li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2 class="section-title">Explore More</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.8;">Check out my academic work, projects, and achievements</p>
+            <div class="grid">
+                <a href="academic-samples.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>📚 Academic Samples</h3>
+                    <p>Essays, math projects, and computer science assignments from my core classes.</p>
+                </a>
+
+                <a href="major-projects.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>💻 Major Projects</h3>
+                    <p>Explore the coding projects I've developed independently and personal accomplishments.</p>
+                </a>
+
+                <a href="extra-curriculars.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>🎵 Extracurriculars</h3>
+                    <p>Learn about my involvement in clubs, organizations, and leadership roles.</p>
+                </a>
+
+                <a href="classroom-leadership-and-initiative.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>🌟 Leadership & Initiative</h3>
+                    <p>Discover my leadership positions and community contributions.</p>
+                </a>
+
+                <a href="college-research.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>🎓 College Research</h3>
+                    <p>View my college research, selection process, and institutional comparisons.</p>
+                </a>
+
+                <a href="essays.html" class="card" style="text-decoration: none; cursor: pointer;">
+                    <h3>✍️ Essays & Statements</h3>
+                    <p>Personal statement, supplemental essays, and PIQ responses.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">I'm always interested in new opportunities, collaborations, and conversations. Feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="mailto:zhanebell25@gmail.com" class="contact-link">
+                    <span>📧</span>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/zhane-bell-b893a7280" target="_blank" class="contact-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        © 2024 Zhane Bell. All rights reserved.
+        <p>&copy; 2026 Zhane Bell. All rights reserved. | Built with modern web technologies</p>
     </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to system preference
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                applyTheme(prefersDark ? 'dark' : 'light');
+            }
+        }
+
+        function applyTheme(theme) {
+            body.classList.remove('light-mode', 'dark-mode');
+            body.classList.add(theme + '-mode');
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Initialize theme on page load
+        initializeTheme();
+
+        // Scroll indicator click
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
