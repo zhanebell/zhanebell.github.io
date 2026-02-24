@@ -5,200 +5,519 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Samples - Zhane Bell's Portfolio</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
+            box-sizing: border-box;
         }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #ec4899;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-border: #334155;
+            --dark-text: #f1f5f9;
+            --dark-text-secondary: #cbd5e1;
+            --light-bg: #f8fafc;
+            --light-card: #ffffff;
+            --light-border: #e2e8f0;
+            --light-text: #0f172a;
+            --light-text-secondary: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
         header {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #a39161;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
-        a {
-            text-decoration: none;
-            color: #a39161;
-            font-weight: bold;
+
+        body.light-mode header {
+            background-color: rgba(248, 250, 252, 0.95);
+            border-bottom: 1px solid var(--light-border);
         }
-        nav a {
-            color: #fff;
-            padding: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border-radius: 15px;
+
+        body.dark-mode header {
+            background-color: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--dark-border);
         }
-        nav a:hover {
-            background-color: #333;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 15px;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .container {
+
+        nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .section {
-            margin-bottom: 2rem;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
         }
-        .section h2 {
-            margin-bottom: 1rem;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
         }
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
             position: relative;
-            bottom: 0;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .nav-links a {
+            color: var(--light-text);
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--dark-text);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* Responsive Styles */
-        @media only screen and (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .theme-toggle {
+            color: var(--light-text);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        body.dark-mode .theme-toggle {
+            color: var(--dark-text);
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: inherit;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 2rem;
+        }
+
+        .page-title {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-description {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .grid-embeds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .embed-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid;
+            animation: fadeInUp 0.6s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .embed-container {
+            border-color: var(--light-border);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .embed-container {
+            border-color: var(--dark-border);
+            box-shadow: 0 4px 15px rgba(99,102,241,0.1);
+        }
+
+        .embed-container:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .embed-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+
+        .card {
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out;
+            border: 1px solid;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .card {
+            background-color: var(--light-card);
+            border-color: var(--light-border);
+        }
+
+        body.dark-mode .card {
+            background-color: var(--dark-card);
+            border-color: var(--dark-border);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        body.light-mode .card:hover {
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+        }
+
+        body.dark-mode .card:hover {
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+        }
+
+        body.light-mode .card p {
+            color: var(--light-text-secondary);
+        }
+
+        body.dark-mode .card p {
+            color: var(--dark-text-secondary);
+        }
+
+        .card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover {
+            color: var(--secondary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                padding: 0.5rem;
-            }
-            .container {
-                padding: 1rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Custom Styles */
-        .left-aligned-img {
-            float: left;
-            margin-right: 1rem;
-            width: 150px; /* Resize the image */
+        footer {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: border-color 0.3s ease;
         }
-        a {
-            text-decoration: none;
-            color: #a39161;
-            font-weight: bold;
+
+        body.light-mode footer {
+            border-color: var(--light-border);
+            color: var(--light-text-secondary);
         }
-        .english-samples {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+
+        body.dark-mode footer {
+            border-color: var(--dark-border);
+            color: var(--dark-text-secondary);
         }
-        .english-samples iframe {
-            flex: 1 1 calc(50% - 1rem); /* 50% width minus gap */
-            max-width: 100%;
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: inherit;
+                padding: 2rem 1rem;
+                gap: 1rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            .grid-embeds {
+                grid-template-columns: 1fr;
+            }
+
+            .embed-container iframe {
+                height: 300px;
+            }
         }
-        .english-samples .full-width {
-            flex: 1 1 100%;
-            max-width: calc(50% - 1rem); /* Shrink the fifth essay */
+
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        button, a {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="light-mode">
     <header>
-        <h1>Zhane Bell's Digital Portfolio</h1>
+        <nav>
+            <a href="index.html" class="logo">Zhane Bell</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </nav>
     </header>
-    <nav>
-        <div class="dropdown">
-            <a href="#">About Me</a>
-            <div class="dropdown-content">
-                <a href="index.html#about">About Me</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Academic and Professional Profile</a>
-            <div class="dropdown-content">
-                <a href="academic-samples.html">Academic Samples</a>
-                <a href="extra-curriculars.html">Extra-Curriculars</a>
-                <a href="major-projects.html">Major Personal Projects & Accomplishments</a>
-                <a href="classroom-leadership-and-initiative.html">Classroom Leadership & Initiative</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">College Research + Essays</a>
-            <div class="dropdown-content">
-                <a href="college-research.html">College Research</a>
-                <a href="application-theme.html">Application Theme</a>
-                <a href="essays.html">Personal Statement, Supplementals, PIQs</a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <h2>Academic Samples</h2>
-        <p>Welcome to my Academic Samples page! Here you will find a collection of my best work, including essays for high school and early college courses, detailed math projects, and various computer science projects. Each sample showcases my dedication and passion for learning and excellence.</p>
-        <div class="section">
-            <h2>English Samples</h2>
-            <div class="english-samples">
-                <iframe src="https://drive.google.com/file/d/1gFTsuOJpshzFXfOaOveTqZjJAnZB3XZo/preview" width="640" height="480" allow="autoplay"></iframe>
-                <iframe src="https://drive.google.com/file/d/1Gkkp0k0Ki4luLGIKrs2e_J0okI9O7TRi/preview" width="640" height="480" allow="autoplay"></iframe>
-                <iframe src="https://drive.google.com/file/d/1xkg7bNAMul_P6cRZjIjf5X74Ej1ME4eG/preview" width="640" height="480" allow="autoplay"></iframe>
-                <iframe src="https://drive.google.com/file/d/1-nJaUnv0HNdp6OO47RZzJtXpLlzvJBcZ/preview" width="640" height="480" allow="autoplay"></iframe>
-                <iframe class="full-width" src="https://drive.google.com/file/d/1R33-1ySrDEbYa7bPSBaIFI6vR8SP0YMA/preview" width="640" height="480" allow="autoplay"></iframe>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Math Samples</h2>
-            <p>In my Precalculus course, I completed a Desmos art project where I created a portrait of my girlfriend using a combination of inequalities, trigonometric functions, and various graphs. This project demonstrates my ability to apply mathematical concepts creatively. You can view the project <a href="https://www.desmos.com/calculator/jhqguxae7g" target="_blank">here</a>.</p>
-        </div>
-        <div class="section">
-            <h2>Computer Science Samples</h2>
-            <div class="container">
-                <h2>Personal Projects</h2>
-                <div id="chess-bot" class="portfolio-item">
-                    <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/CHESScom/phphK5JVu.png" alt="Chess Bot Project" class="left-aligned-img">
-                    <div>
-                        <h3>Chess Bot Project</h3>
-                        <p>This project is a recreation of a chess game, featuring a bot that plays against you and interacts with you throughout the game by saying various phrases. You can explore the project <a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py" target="_blank">here</a>.</p>
-                    </div>
+
+    <main>
+        <h1 class="page-title">Academic Samples</h1>
+        <p class="page-description">A collection of my best academic work including essays, mathematical projects, and computer science assignments showcasing my dedication to excellence.</p>
+
+        <section class="content-section">
+            <h2 class="section-title">English Samples</h2>
+            <div class="grid-embeds">
+                <div class="embed-container">
+                    <iframe src="https://drive.google.com/file/d/1gFTsuOJpshzFXfOaOveTqZjJAnZB3XZo/preview" allow="autoplay"></iframe>
+                </div>
+                <div class="embed-container">
+                    <iframe src="https://drive.google.com/file/d/1Gkkp0k0Ki4luLGIKrs2e_J0okI9O7TRi/preview" allow="autoplay"></iframe>
+                </div>
+                <div class="embed-container">
+                    <iframe src="https://drive.google.com/file/d/1xkg7bNAMul_P6cRZjIjf5X74Ej1ME4eG/preview" allow="autoplay"></iframe>
+                </div>
+                <div class="embed-container">
+                    <iframe src="https://drive.google.com/file/d/1-nJaUnv0HNdp6OO47RZzJtXpLlzvJBcZ/preview" allow="autoplay"></iframe>
+                </div>
+                <div class="embed-container">
+                    <iframe src="https://drive.google.com/file/d/1R33-1ySrDEbYa7bPSBaIFI6vR8SP0YMA/preview" allow="autoplay"></iframe>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Mathematics</h2>
+            <div class="card">
+                <h3>Desmos Art Project</h3>
+                <p>In my Precalculus course, I created a portrait using mathematical functions, inequalities, and trigonometric equations. This project demonstrates my ability to merge creativity with mathematical concepts, visualizing complex equations as art.</p>
+                <p><a href="https://www.desmos.com/calculator/jhqguxae7g" target="_blank">View the Desmos Project →</a></p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Computer Science</h2>
+            <div class="card">
+                <h3>Chess Bot Project</h3>
+                <p>A recreation of chess entirely in Python without external libraries. The bot includes game intelligence and plays moves against opponents. This project showcases my deep interest in machine learning and artificial intelligence.</p>
+                <p><a href="https://replit.com/@ZhaneBell/FinalBellChessBot#main.py" target="_blank">View on Replit →</a></p>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        © 2024 Zhane Bell. All rights reserved.
+        <p>&copy; 2026 Zhane Bell. All rights reserved.</p>
     </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                applyTheme(prefersDark ? 'dark' : 'light');
+            }
+        }
+
+        function applyTheme(theme) {
+            body.classList.remove('light-mode', 'dark-mode');
+            body.classList.add(theme + '-mode');
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        initializeTheme();
+    </script>
 </body>
 </html>

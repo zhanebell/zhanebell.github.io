@@ -1,169 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom Leadership & Initiative - Zhane Bell's Digital Portfolio</title>
+    <title>Leadership & Initiative - Zhane Bell's Portfolio</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #a39161;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff;
-            padding: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            border-radius: 15px;
-        }
-        nav a:hover {
-            background-color: #333;
-        }
-        a {
-            text-decoration: none;
-            color: #a39161;
-            font-weight: bold;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 15px;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .bordered-section {
-            border: 2px solid #a39161;
-            border-radius: 10px;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            margin-bottom: 1.5rem;
-        }
-        .section h2 {
-            margin-bottom: 1rem;
-        }
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Responsive Styles */
-        @media only screen and (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav a {
-                padding: 0.5rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#6366f1;--secondary:#ec4899;--dark-bg:#0f172a;--dark-card:#1e293b;--dark-border:#334155;--dark-text:#f1f5f9;--dark-text-secondary:#cbd5e1;--light-bg:#f8fafc;--light-card:#fff;--light-border:#e2e8f0;--light-text:#0f172a;--light-text-secondary:#64748b}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}body.light-mode{background-color:var(--light-bg);color:var(--light-text)}body.dark-mode{background-color:var(--dark-bg);color:var(--dark-text)}header{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(10px)}body.light-mode header{background-color:rgba(248,250,252,0.95);border-bottom:1px solid var(--light-border)}body.dark-mode header{background-color:rgba(15,23,42,0.95);border-bottom:1px solid var(--dark-border)}nav{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{text-decoration:none;font-weight:500;position:relative}body.light-mode .nav-links a{color:var(--light-text)}body.dark-mode .nav-links a{color:var(--dark-text)}.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:width 0.3s}.nav-links a:hover::after{width:100%}.theme-toggle{background:0;border:none;font-size:1.5rem;cursor:pointer;width:40px;height:40px;border-radius:50%;transition:all 0.3s}body.light-mode .theme-toggle{background-color:rgba(99,102,241,0.1);color:var(--light-text)}body.dark-mode .theme-toggle{background-color:rgba(99,102,241,0.1);color:var(--dark-text)}.theme-toggle:hover{transform:rotate(20deg);background-color:var(--primary);color:#fff}main{margin-top:70px;padding:2rem}.page-title{max-width:1200px;margin:0 auto 0.5rem;font-size:2.5rem;font-weight:700}.page-description{max-width:1200px;margin:0 auto 2rem;font-size:1.1rem;opacity:0.8}.content-section{max-width:1200px;margin:3rem auto 0}.card{padding:2rem;border-radius:12px;margin-bottom:2rem;border:1px solid;transition:all 0.3s}body.light-mode .card{background-color:var(--light-card);border-color:var(--light-border)}body.dark-mode .card{background-color:var(--dark-card);border-color:var(--dark-border)}.card:hover{transform:translateY(-3px);border-color:var(--primary)}body.light-mode .card:hover{box-shadow:0 10px 30px rgba(99,102,241,0.15)}body.dark-mode .card:hover{box-shadow:0 10px 30px rgba(99,102,241,0.25)}.card h3{font-size:1.5rem;margin-bottom:0.75rem;font-weight:700}.card ul{margin-left:1.5rem;margin-top:1rem}.card li{margin-bottom:0.5rem;line-height:1.6}body.light-mode .card p,body.light-mode .card li{color:var(--light-text-secondary)}body.dark-mode .card p,body.dark-mode .card li{color:var(--dark-text-secondary)}footer{margin-top:6rem;padding:3rem 2rem;text-align:center;border-top:1px solid;max-width:1200px;margin-left:auto;margin-right:auto}body.light-mode footer{border-color:var(--light-border);color:var(--light-text-secondary)}body.dark-mode footer{border-color:var(--dark-border);color:var(--dark-text-secondary)}@media (max-width:768px){main{padding:1rem}.page-title{font-size:1.75rem}.nav-links{display:none}}*{transition:background-color 0.3s,color 0.3s,border-color 0.3s}
     </style>
 </head>
-
-<body>
+<body class="light-mode">
     <header>
-        <h1>Zhane Bell's Digital Portfolio</h1>
-    </header>
-    <nav>
-        <div class="dropdown">
-            <a href="#">About Me</a>
-            <div class="dropdown-content">
-                <a href="index.html#about">About Me</a>
-                <a href="index.html#contact">Contact</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Academic and Professional Profile</a>
-            <div class="dropdown-content">
-                <a href="academic-samples.html">Academic Samples</a>
-                <a href="extra-curriculars.html">Extra-Curriculars</a>
-                <a href="major-projects.html">Major Personal Projects & Accomplishments</a>
-                <a href="classroom-leadership-and-initiative.html">Classroom Leadership & Initiative</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">College Research + Essays</a>
-            <div class="dropdown-content">
-                <a href="college-research.html">College Research</a>
-                <a href="application-theme.html">Application Theme</a>
-                <a href="essays.html">Personal Statement, Supplementals, PIQs</a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
- <div class="bordered-section">
-            <h2>Classroom Leadership & Initiative</h2>
-            <ul>
-                <li>
-                    <strong>Leadership:</strong> I have held several leadership positions throughout my high school years. I plan to maintain my role as a S.T.E.A.M. Academy Ambassador and as a member of the National Society of Leadership and Success. Aside from clubs, I naturally gravitate toward leadership both inside and outside the classroom. In class, I help my peers who are struggling with concepts, often explaining material when teachers find it challenging to relate to students. I lead group projects by organizing timelines and delegating tasks. To me, leadership isn't always formal; anyone can step up and lead. I have also been certified by Schoolhouse.world to tutor SAT math to students around the world. Additionally, at home, as the eldest of four siblings, I often assume responsibility for their care.
-                </li>
-                <br>
-                <li>
-                    <strong>Intellectual Vitality:</strong> My passion for learning is evident in my rigorous coursework, personal projects, internships, and continuous pursuit of knowledge and problem-solving. I consistently enroll in the most challenging AP and early college courses, always striving to stretch my intellectual capabilities. I don't just complete these courses with minimal effort; I excel in them, dedicating significant time to each. I further my learning with additional online resources and aim to obtain computer science certifications throughout my senior year. Through personal projects, I enhance my coding skills and explore new technologies and frameworks. Continuous learning is a significant part of my daily routine; I stay updated on the latest tech news through newsletters, books, and livestreamed technology events and showcases. I have recently developed a keen interest in machine learning and the world of artificial intelligence. I believe that my love for math sparked this interest, as machine learning algorithms rely heavily on complex mathematical concepts. To demonstrate my love for learning, I am writing my personal statement and Common Application essay about my relationship with mathematics. You can check out my most recent drafts of my essays in the College Preparation section!
-                </li>
+        <nav>
+            <a href="index.html" class="logo">Zhane Bell</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
-        </div>
-    </div>
-    <footer>
-        &copy; 2024 Zhane Bell. All rights reserved.
-    </footer>
-</body>
+            <button class="theme-toggle" id="themeToggle"><span id="themeIcon">🌙</span></button>
+        </nav>
+    </header>
 
+    <main>
+        <h1 class="page-title">Classroom Leadership & Initiative</h1>
+        <p class="page-description">How I demonstrate leadership and intellectual vitality in academic and personal settings.</p>
+
+        <section class="content-section">
+            <div class="card">
+                <h3>👥 Leadership</h3>
+                <ul>
+                    <li>Hold multiple leadership positions: STEAM Academy Ambassador and National Society of Leadership and Success member</li>
+                    <li>Naturally gravitate toward leadership both inside and outside the classroom</li>
+                    <li>Help struggling peers understand difficult concepts, often explaining material in ways teachers find challenging to communicate</li>
+                    <li>Lead group projects by organizing timelines and delegating tasks effectively</li>
+                    <li>Certified by Schoolhouse.world to tutor SAT math to students around the world</li>
+                    <li>As the eldest of four siblings, assume responsibility for their care and guidance at home</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📊 Intellectual Vitality</h3>
+                <ul>
+                    <li>Passion for learning evident in rigorous coursework including most challenging AP and early college courses</li>
+                    <li>Excel in courses while dedicating significant time and energy to each</li>
+                    <li>Enhance learning with additional online resources and computer science certifications</li>
+                    <li>Personal projects showcase continuous skill development and technological exploration</li>
+                    <li>Stay updated on latest tech news through newsletters, books, and livestreamed technology events</li>
+                    <li>Recently developed keen interest in machine learning and artificial intelligence driven by love of mathematics</li>
+                    <li>Demonstrate commitment to lifelong learning through continuous exploration and pursuit of knowledge</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2026 Zhane Bell. All rights reserved.</p></footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) applyTheme(savedTheme);
+            else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        }
+        function applyTheme(theme) {
+            body.classList.remove('light-mode', 'dark-mode');
+            body.classList.add(theme + '-mode');
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('theme', theme);
+        }
+        themeToggle.addEventListener('click', () => applyTheme(body.classList.contains('dark-mode') ? 'light' : 'dark'));
+        initializeTheme();
+    </script>
+</body>
 </html>

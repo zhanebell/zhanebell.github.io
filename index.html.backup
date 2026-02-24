@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Zhane Bell's Digital Portfolio</title>
+     <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Ensure all elements use border-box */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        a {
+            text-decoration: none;
+            color: #a39161;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #a39161;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border-radius: 15px;
+        }
+        nav a:hover {
+            background-color: #333;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 15px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .intro {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1 1 100%;
+        }
+        .intro img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-right: 2rem;
+        }
+        .intro-text {
+            flex: 1;
+        }
+        .content-section {
+            margin-top: 2rem;
+            flex: 1 1 45%;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Additional Styles for Welcome and Contact Section */
+        .welcome-section {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .welcome-section h2 {
+            color: #a39161;
+        }
+        .welcome-section p {
+            font-size: 1.1rem;
+        }
+        #contact a {
+            color: #a39161;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #contact a:hover {
+            color: #a39161;
+        }
+
+        /* Styles for Additional Resources Buttons */
+        .additional-resources-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-button {
+            flex: 1;
+            min-width: 150px;
+            background-color: #a39161;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .resource-button:hover {
+            background-color: #8a7b4f;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                padding: 0.5rem;
+            }
+            .container {
+                padding: 1rem;
+                flex-direction: column;
+            }
+            .intro {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .intro img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            .intro-text {
+                text-align: center;
+            }
+            .content-section {
+                flex: 1 1 100%;
+            }
+            .additional-resources-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zhane Bell's Digital Portfolio</h1>
+    </header>
+    <nav>
+        <div class="dropdown">
+            <a href="#">About Me</a>
+            <div class="dropdown-content">
+                <a href="index.html#about">About Me</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Academic and Professional Profile</a>
+            <div class="dropdown-content">
+                <a href="academic-samples.html">Academic Samples</a>
+                <a href="extra-curriculars.html">Extra-Curriculars</a>
+                <a href="major-projects.html">Major Personal Projects & Accomplishments</a>
+                <a href="classroom-leadership-and-initiative.html">Classroom Leadership & Initiative</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">College Research + Essays</a>
+            <div class="dropdown-content">
+                <a href="college-research.html">College Research</a>
+                <a href="application-theme.html">Application Theme</a>
+                <a href="essays.html">Personal Statement, Supplementals, PIQs</a>
+            </div>
+        </div>
+    </nav>
+     <div class="container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2> - Welcome to My Digital Portfolio! C/O 2025 - </h2>
+            <p>This site is designed to showcase my academic achievements, extracurricular activities, personal projects, and preparations for college applications. Use the navigation tabs above to explore different sections:</p>
+            <ul>
+                <li><strong>Academic Samples:</strong> View examples of my work from various classes, including essays, math projects, and computer science assignments.</li>
+                <li><strong>Personal Projects:</strong> Discover the coding projects I've developed independently.</li>
+                <li><strong>Extracurriculars:</strong> Learn about the clubs and organizations I'm involved in and my roles within them.</li>
+                <li><strong>Leadership & Initiative:</strong> Read about my leadership positions and contributions in both academic and community settings.</li>
+                <li><strong>College Preparation:</strong> Access my college research, application themes, and drafts of my essays and short responses.</li>
+            </ul>
+            <p>I hope this portfolio provides you with valuable insights into my experiences and passions. Feel free to explore each section, and don't hesitate to contact me if you have any questions or feedback!</p>
+        </div>
+     </div>
+    <div class="container">
+        <div class="intro">
+            <img src="zhanebellheadshot.jpg" alt="Zhane Bell Headshot">
+            <div class="intro-text">
+                <h2>About Me</h2>
+                <p>I am a senior at James Campbell High School and a proud member of the S.T.E.A.M. Academy with a passion for computer science, mathematics, and music. My musical journey spans three years in the marching band and concert band, while I've also played piano and drums at my church, New Hope Leeward. As a devoted STEAM Academy Ambassador, I am committed to improving our school community and sharing exciting opportunities that S.T.E.A.M. has to offer. Beyond academics, I enjoy taking on coding projects, studying math, and reading about the latest tech news. In this portfolio, you will find academic samples from some of my core classes. My portfolio contains my college research, descriptions of my extra curricular activities, and drafts of my essays and PIQ responses. Feel free to look around and email me if you have any questions!</p>
+                <h3>Contact</h3>
+                <p>You can contact me via email at <a href="mailto:zhanebell25@gmail.com" target="_blank" style="text-decoration: none; color: #a39161; font-weight: bold;">zhanebell25@gmail.com</a> or connect with me on <a target="_blank" href="https://www.linkedin.com/in/zhane-bell-b893a7280" style="text-decoration: none; color: #a39161; font-weight: bold;">LinkedIn</a>.</p>
+                
+                <!-- New Additional Resources Section -->
+                <h3>Additional Resources</h3>
+                <div class="additional-resources-buttons">
+                    <a href="https://drive.google.com/file/d/1esZyKflSC0AQhv1pRDVlzsv42d087aCG/view?usp=sharing" target="_blank" class="resource-button">Resume</a>
+                    <a href="https://docs.google.com/document/d/1oYwwU8JiY0URXHwaAbVj9gKstoU-MoLD6Il7rPmSE6Y/edit?usp=sharing" target="_blank" class="resource-button">Post Secondary Plan (GPS)</a>
+                    <a href="https://drive.google.com/file/d/1cEzg25kGfVQipLIGoBjCGZOEdgK4wGAp/view?usp=sharing" target="_blank" class="resource-button">Unofficial Transcript</a>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <h3>Work Experience</h3>
+            <ul>
+                <li>
+                    <strong>Bell Electric, Ewa Beach, HI — Computer Tech</strong>
+                    <ul>
+                        <li>June 2023 - Present</li>
+                        <li>Recorded manufacturer data of electrical equipment in the InspecTrend Program.</li>
+                        <li>Logged electrical variables in the InspecTrend Program.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>iTrampoline Hawaii, Waipahu, HI — Park Attendant</strong>
+                    <ul>
+                        <li>June 2023 - September 2023</li>
+                        <li>Provided excellent customer service and enforced park rules and regulations.</li>
+                        <li>Maintained the cleanliness of the facility.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>LBNL Energy Sciences Network, Berkeley, CA — Student Intern</strong>
+                    <ul>
+                        <li>June 2023 - July 2023</li>
+                        <li>Researched new Data Visualizations for Network/Router Data.</li>
+                        <li>Presented research to mentors and the rest of the computing sciences division.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content-section">
+            <h3>Volunteer Experience</h3>
+            <ul>
+                <li>
+                    <strong>AHEC Hawaii Health Workforce Summit, Hilton Hawaiian Village — Volunteer</strong>
+                    <ul>
+                        <li>Volunteered annually since sophomore year</li>
+                        <li>Checked in all exhibitors, ensuring they had their booths set up and ready to go.</li>
+                        <li>Set up tables for all meals.</li>
+                        <li>Created name tags for guests using Microsoft Word.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Chamber of Commerce Annual Luncheon, Hilton Hawaiian Village — Volunteer</strong>
+                    <ul>
+                        <li>Volunteered annually since sophomore year</li>
+                        <li>Checked in all exhibitors, ensuring their booths were set up and ready.</li>
+                        <li>Validated parking, and set up tables for all meals.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        © 2024 Zhane Bell. All rights reserved.
+    </footer>
+</body>
+</html>
