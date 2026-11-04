@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1120"><meta name="description" content="Editable typical-month household budget for September 2027"><title>Our Next Chapter · Monthly Budget</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#edf3fd;background:#0a0f1b}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse 85% 50% at 50% -8%,#26375f 0%,#10192a 60%,#090e19 100%)}main{max-width:1130px;padding:28px 20px 75px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:14px}.eyebrow{color:#a9bad6;letter-spacing:2.2px;text-transform:uppercase;font-size:11px;font-weight:750}.tag{font-size:11px;border:1px solid #40516d;background:#18243a;padding:8px 11px;border-radius:99px;color:#c4d4ee}h1{font-size:clamp(38px,6vw,65px);letter-spacing:-2px;line-height:1.08;margin:26px 0 13px}h1 span{color:#9ee5c5}.sub{line-height:1.75;color:#a8b7cf;max-width:760px;font-size:14px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:29px 0}.card{border:1px solid #2d3b53;border-radius:19px;background:linear-gradient(150deg,#16233a,#111b2d);padding:20px}.label{font-size:12px;color:#9eaeca;font-weight:650}.number{font-weight:800;font-variant-numeric:tabular-nums;font-size:clamp(24px,3vw,34px);letter-spacing:-1px;margin:10px 0 6px}.help{font-size:11px;color:#93a5c1;line-height:1.5}.positive{color:#83e4b8}.negative{color:#f5a1a1}.section{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:28px 0 13px}.section h2{font-size:19px;margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #2b3950}.field:last-of-type{border:0}.field label{font-size:13px;flex:1}.field small{display:block;color:#8ea2bd;margin-top:4px;line-height:1.4;font-size:11px}.field input{width:99px;border-radius:9px;padding:9px 8px;font-size:14px;color:#fff;font-weight:750;text-align:right;border:1px solid #425574;background:#101a2b;outline:0;font-variant-numeric:tabular-nums}.field input:focus{border-color:#9ebcf1;box-shadow:0 0 0 2px #426092}.rule{height:1px;background:#35445d;margin:14px 0}.total{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:9px 0 0;font-weight:800}.pair{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #2b3950;font-size:13px}.pair small{display:block;font-size:11px;color:#97a7c2;margin-top:4px;line-height:1.4}.bar{display:flex;width:100%;height:15px;background:#233149;border-radius:100px;overflow:hidden;margin:16px 0}.segment{height:100%;transition:width .2s}.legend{display:flex;flex-wrap:wrap;gap:15px;color:#b2c0d6;font-size:11px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.mini h3{margin:0 0 7px;color:#e8f1fd;font-size:14px}.mini p{font-size:12px;line-height:1.7;color:#a0b2cc;margin:0}.note{color:#9caecb;font-size:12px;line-height:1.7;margin-top:14px}.caution{background:#2b2432;border:1px solid #69516c;color:#edcee5;border-radius:15px;padding:14px 17px;line-height:1.7;font-size:12px;margin-top:18px}.actions{display:flex;gap:9px}.btn{cursor:pointer;background:#263955;color:#e9f2fc;border:1px solid #465875;border-radius:9px;padding:9px 11px;font-weight:650}.btn:hover{background:#365078}footer{margin-top:30px;padding-top:20px;border-top:1px solid #304056;color:#91a2ba;font-size:11px;line-height:1.7}@media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}.two,.mini{grid-template-columns:1fr}}@media(max-width:420px){main{padding:20px 13px 50px}.cards{gap:8px}.card{padding:15px}.number{font-size:25px}.top{align-items:start}.tag{font-size:9px}h1{letter-spacing:-1.4px}}@media print{body{background:white;color:#111}.card{background:white;border:1px solid #bbb}.sub,.help,.note,.label,.mini p,.field small{color:#555}.field input{color:#111;background:#fff}.btn{display:none}main{padding:0}}
+</style></head><body><main>
+<div class="top"><div class="eyebrow">Our household · September 2027</div><span class="tag">Keauhou Place · Typical month</span></div>
+<h1>Our next chapter.<br><span>One month at a time.</span></h1>
+<p class="sub">A realistic, mildly cautious budget for an ordinary month living together with a roommate in Kakaʻako. This deliberately <strong>excludes first-month expenses</strong> such as deposits, furniture, and moving costs. Change any number to explore your own scenario.</p>
+<div class="cards">
+<div class="card"><div class="label">Household take-home</div><div class="number" id="inTop">—</div><div class="help">Two incomes; ROTC excluded by default</div></div>
+<div class="card"><div class="label">Monthly living costs</div><div class="number" id="outTop">—</div><div class="help">Housing, food, car, insurance & lifestyle</div></div>
+<div class="card"><div class="label">After living expenses</div><div class="number positive" id="surplusTop">—</div><div class="help">Available for savings and other goals</div></div>
+<div class="card"><div class="label">After planned HYSA saving</div><div class="number positive" id="netTop">—</div><div class="help">Unallocated cash buffer</div></div>
+</div>
+<div class="section"><h2>Monthly cash flow</h2><span class="help">Estimates · USD</span></div>
+<div class="two">
+<section class="card"><div class="eyebrow">01 / Income</div>
+<div class="field"><label for="nsa">NSA take-home income<small>$593.04 every two weeks, annualized; Roth TSP already withheld</small></label><input id="nsa" type="number" min="0" value="1285"></div>
+<div class="field"><label for="rate">Qadence hourly pay<small>Projected full-time job after graduation; not confirmed</small></label><input id="rate" type="number" min="0" step=".5" value="27.5"></div>
+<div class="field"><label for="hours">Hours worked / week<small>Assumes a consistent 52-week annualized schedule</small></label><input id="hours" type="number" min="0" max="80" value="40"></div>
+<div class="field"><label for="netrate">Take-home percentage<small>Approx. after payroll taxes/withholding; health coverage separate</small></label><input id="netrate" type="number" min="0" max="100" value="74"></div>
+<div class="field"><label for="rotc">ROTC stipend used for bills<small>Default $0: save irregular stipends instead of relying on them</small></label><input id="rotc" type="number" min="0" value="0"></div>
+<div class="pair"><span>Qadence estimated take-home<small>Wage × hours × 52 / 12 × take-home percentage</small></span><strong id="qnet">—</strong></div>
+<div class="rule"></div><div class="total"><span>Combined income</span><span id="income">—</span></div>
+</section>
+<section class="card"><div class="eyebrow">02 / Living expenses</div><div id="expenses"></div><div class="rule"></div><div class="total"><span>Total expenses</span><span id="expensesTotal">—</span></div></section>
+</div>
+<div class="section"><h2>The month at a glance</h2><span class="help">Share of monthly income</span></div>
+<section class="card"><div class="bar" id="bar"></div><div class="legend"><span><i class="dot" style="background:#8db7f5"></i>Rent</span><span><i class="dot" style="background:#a9a0f2"></i>Other expenses</span><span><i class="dot" style="background:#e2bc79"></i>HYSA</span><span><i class="dot" style="background:#71d6aa"></i>Remaining</span></div><p id="assessment" class="note"></p></section>
+<div class="section"><h2>Savings & resilience</h2><span class="help">Normal month, not move-in month</span></div>
+<div class="two">
+<section class="card"><div class="eyebrow">03 / Savings plan</div>
+<div class="field"><label for="hysa">HYSA transfer / month<small>Existing $225 biweekly habit ≈ $488/month</small></label><input id="hysa" type="number" min="0" value="488"></div>
+<div class="pair"><span>Roth TSP<small>About $217/month already withheld from NSA pay; not deducted again</small></span><strong>$217</strong></div>
+<div class="pair"><span>ROTC stipends<small>Budget assumes they are saved separately</small></span><strong>Not counted</strong></div>
+<div class="rule"></div><div class="total"><span>After savings transfer</span><span id="net">—</span></div>
+</section>
+<section class="card"><div class="eyebrow">04 / Stress test</div>
+<div class="pair"><span>Rent as % of income</span><strong id="rentPct">—</strong></div>
+<div class="pair"><span>Expenses as % of income</span><strong id="spendPct">—</strong></div>
+<div class="pair"><span>Six months' living costs</span><strong id="reserve">—</strong></div>
+<div class="pair"><span>Total rent without roommate<small>Temporary exposure if roommate leaves and no replacement is found</small></span><strong id="wholeRent">—</strong></div>
+<p class="note">The household has substantial reported savings as a separate safety cushion. Existing savings are not counted as recurring monthly income or included in the cash-flow totals.</p>
+</section></div>
+<div class="section"><h2>What this model assumes</h2><div class="actions"><button class="btn" id="reset">Reset</button><button class="btn" id="print">Print / PDF</button></div></div>
+<div class="mini">
+<div class="card"><h3>Home</h3><p>Your combined $1,700 share of a $3,400 two-bedroom at Keauhou Place; private bed/bath, shared kitchen and living room, two parking spaces and building amenities. Utilities and Wi-Fi reportedly included. Confirm on the lease.</p></div>
+<div class="card"><h3>Income & school</h3><p>One part-time NSA income, one projected full-time income, ROTC not used for bills. No student-loan or tuition payments. Existing retirement TSP deduction is already reflected in net pay.</p></div>
+<div class="card"><h3>Car & health</h3><p>Borrowed family Lexus, with a modest car-insurance/maintenance allowance pending confirmation. Zhane expects parental health coverage; a separate provisional premium is budgeted for Qadence.</p></div>
+</div>
+<div class="caution"><strong>Verify before signing:</strong> Actual full-time take-home pay, health insurance and payroll deductions (to avoid double-counting), rent/utility terms, shared lease liability, and car insurance. Public website: do not enter private account numbers or other personal financial identifiers. The editor has no backend and does not save entries.</div>
+<footer>Planning snapshot · November 2026 · September 2027 onward · Static GitHub Pages HTML, CSS and JavaScript. No logins, analytics, account connections or data transmission. Figures are estimates, not guarantees.</footer>
+</main><script>
+const spec=[
+['rent','Your rent share',1700,'You + Qadence; roommate pays the other half'],
+['food','Groceries & household',600,'Food, toiletries and shared supplies'],
+['gas','Gas & transport',300,'Fuel, parking and incidental travel'],
+['car','Car insurance & maintenance',225,'Provisional allowance for the borrowed Lexus'],
+['health','Qadence health premium',225,'Separate health coverage assumption'],
+['medical','Medical out-of-pocket',75,'Copays and occasional needs'],
+['phone','Phones & subscriptions',130,'Estimated combined communications and services'],
+['dinner','Monthly date / dinner',125,'One nicer dinner together'],
+['personal','Personal spending',175,'Modest individual discretionary allowance'],
+['misc','Miscellaneous buffer',200,'Small irregular expenses']
+];
+const def={nsa:1285,rate:27.5,hours:40,netrate:74,rotc:0,hysa:488},$=id=>document.getElementById(id),money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v),n=id=>Math.max(0,+$(id).value||0);
+$('expenses').innerHTML=spec.map(([id,title,value,desc])=>'<div class="field"><label for="'+id+'">'+title+'<small>'+desc+'</small></label><input type="number" min="0" step="25" value="'+value+'" id="'+id+'"></div>').join('');
+function calc(){
+ const q=n('rate')*n('hours')*52/12*Math.min(100,n('netrate'))/100;
+ const income=n('nsa')+q+n('rotc');
+ const out=spec.reduce((sum,[id])=>sum+n(id),0);
+ const left=income-out,after=left-n('hysa');
+ const vals={inTop:income,outTop:out,surplusTop:left,netTop:after,qnet:q,income:income,expensesTotal:out,net:after,reserve:out*6,wholeRent:n('rent')*2};
+ Object.entries(vals).forEach(([id,v])=>$(id).textContent=money(v));
+ ['surplusTop','netTop','net'].forEach(id=>{$(id).classList.toggle('negative',vals[id]<0);$(id).classList.toggle('positive',vals[id]>=0)});
+ $('rentPct').textContent=income?((n('rent')/income)*100).toFixed(1)+'%':'—';
+ $('spendPct').textContent=income?((out/income)*100).toFixed(1)+'%':'—';
+ const base=Math.max(income,out+n('hysa'),1),pieces=[[n('rent'),'#8db7f5'],[out-n('rent'),'#a9a0f2'],[n('hysa'),'#e2bc79'],[Math.max(0,after),'#71d6aa']];
+ $('bar').innerHTML=pieces.map(([v,c])=>'<div class="segment" style="width:'+(100*v/base)+'%;background:'+c+'"></div>').join('');
+ $('assessment').textContent=after<0?'This scenario is cash-flow negative after the planned savings transfer. Adjust spending or savings before relying on reserves.':after<300?'This scenario remains positive, but the monthly buffer is narrow. Verify health coverage and rent carefully.':'This scenario leaves a useful cash buffer after the regular HYSA transfer, without depending on ROTC stipends.';
+}
+[...Object.keys(def),...spec.map(x=>x[0])].forEach(id=>$(id).addEventListener('input',calc));
+$('reset').addEventListener('click',()=>{Object.entries(def).forEach(([id,v])=>$(id).value=v);spec.forEach(([id,,v])=>$(id).value=v);calc()});
+$('print').addEventListener('click',()=>window.print());calc();
+</script></body></html>
