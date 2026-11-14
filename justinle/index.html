@@ -36,6 +36,6 @@ function showHelp(){const div=document.createElement('div');div.className='help'
 function showSettings(){const div=document.createElement('div');const p=document.createElement('p');p.textContent='Justin interference';const b=document.createElement('button');b.className='primary';b.textContent=settings.chaos?'ON (recommended)':'OFF';b.onclick=()=>{settings.chaos=!settings.chaos;save('justinle-settings',settings);b.textContent=settings.chaos?'ON (recommended)':'OFF'};div.append(p,b);modal('settings',div,false,'DONE')}
 $('statsBtn').onclick=showStats;$('helpBtn').onclick=showHelp;$('settingsBtn').onclick=showSettings;
 document.addEventListener('keydown',e=>{if(!$('shade').classList.contains('hidden')){if(e.key==='Escape'||e.key==='Enter')closeModal();return}if(e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key;if(k==='Enter')input('↵');else if(k==='Backspace')input('↤');else if(/^[a-z]$/i.test(k))input(k.toUpperCase())});
-render();addShareButton();if(state.status==='playing'&&(!load('justinle-seen-help',false)){save('justinle-seen-help',true);setTimeout(showHelp,350)}
+render();addShareButton();if(state.status==='playing'&&!load('justinle-seen-help',false)){save('justinle-seen-help',true);setTimeout(showHelp,350)}
 })();
 </script></body></html>
